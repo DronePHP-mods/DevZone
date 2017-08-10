@@ -1,18 +1,18 @@
 <?php
 
-return array(
-    'router' => array(
-        'routes' => array(
-            'DevZone' => array(
+return [
+    'router' => [
+        'routes' => [
+            'DevZone' => [
                 'module' => 'DevZone',
                 'controller' => 'Index',
                 'view' => 'index'
-            )
-        ),
-    ),
-    'view_manager' => array(
-        'template_map' => array(
-            'default'    => dirname(__FILE__) . '/../view/layout/devzone.phtml',
-        ),
-    ),
-);
+            ]
+        ],
+    ],
+    'view_manager' => [
+        'template_map' => [
+            'default'    => __DIR__ . '/../view/layout/devzone.phtml',
+        ],
+    ],
+];

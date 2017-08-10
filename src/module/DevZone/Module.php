@@ -1,8 +1,13 @@
 <?php
 
-class DevZone_Module extends Drone_Mvc_AbstractionModule
+namespace DevZone;
+
+Use Drone\Mvc\AbstractionModule;
+use Drone\Mvc\AbstractionController;
+
+class Module extends AbstractionModule
 {
-	public function init(Drone_Mvc_AbstractionController $c)
+	public function init(AbstractionController $c)
 	{
 		// init procedures
 	}

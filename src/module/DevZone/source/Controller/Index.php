@@ -1,6 +1,12 @@
 <?php
 
-class DevZone_Controller_Index extends Drone_Mvc_AbstractionController
+namespace Catcher\Controller;
+
+use Drone\Mvc\AbstractionController;
+use Drone\FileSystem\Shell;
+use Exception;
+
+class Index extends AbstractionController
 {
     public function index()
     {
