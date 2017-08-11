@@ -1,6 +1,6 @@
 <?php
 
-namespace Catcher\Controller;
+namespace DevZone\Controller;
 
 use Drone\Mvc\AbstractionController;
 use Drone\FileSystem\Shell;
