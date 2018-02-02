@@ -18,25 +18,25 @@
 </ul>
 </p>
 
-<h3>Files table</h3>
+<h3>File table</h3>
 <?php
 	$_SESSION["buffer"] = array();
 	$_SESSION["buffer"]["lines"] = 0;
 	$_SESSION["buffer"]["characters"] = 0;
 ?>
 <div class="table-responsive">
-	<table class="table table-striped table-hover table-condensed table-bordered">
-		<thead>
+	<table class="table table-striped table-hover table-sm table-bordered">
+		<thead class="thead-dark">
 			<tr>
-				<th>Path</th>
-				<th># lines / dirs</th>
-				<th># characters / files</th>
+				<th scope="col">Path</th>
+				<th scope="col"># lines / dirs</th>
+				<th scope="col"># characters / files</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr><td class='danger' colspan='3'><h3>Business logic (MVC)</h3></td></tr>
+			<tr class="table-success"><td colspan='3'><h3 class="display-4">Business logic (MVC)</h3></td></tr>
 			<?php $controller->ls($modules) ?>
-			<tr><td class='danger' colspan='3'><h3>Config files</h3></td></tr>
+			<tr class="table-success"><td colspan='3'><h3 class="display-4">Config files</h3></td></tr>
 			<?php $controller->ls($config) ?>
 		</tbody>
 		<tfoot>
@@ -47,8 +47,8 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><span class='label label-danger' style='font-size: 25px'><?= number_format($_SESSION["buffer"]["lines"]) ?> lines</span></td>
-				<td><span class='label label-danger' style='font-size: 25px'><?= number_format($_SESSION["buffer"]["characters"]) ?> characters</span></td>
+				<td><span class='badge badge-danger' style='font-size: 25px'><?= number_format($_SESSION["buffer"]["lines"]) ?> lines</span></td>
+				<td><span class='badge badge-danger' style='font-size: 25px'><?= number_format($_SESSION["buffer"]["characters"]) ?> characters</span></td>
 			</tr>
 		</tfoot>
 	</table>

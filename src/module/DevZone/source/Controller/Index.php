@@ -16,11 +16,11 @@ class Index extends AbstractionController
 
     public function development()
     {
-        return array(
-            'modules'    => dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/module",
-            'config'     => dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/config",
+        return [
+            'modules'        => dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/module",
+            'config'         => dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/config",
             'devzone_config' => include("module/DevZone/config/user.config.php")
-        );
+        ];
     }
 
     public function count($file)
@@ -41,7 +41,7 @@ class Index extends AbstractionController
         fclose ($file);
 
         return array(
-            'lines' => $num_lines,
+            'lines'      => $num_lines,
             'characters' => $characters,
         );
     }
@@ -85,7 +85,7 @@ class Index extends AbstractionController
         return $num_files;
     }
 
-    public function ls ($path)
+    public function ls($path)
     {
         if (is_dir($path))
         {
@@ -98,7 +98,7 @@ class Index extends AbstractionController
                     if (basename($_file) == 'language')
                         continue;
 
-                    $tag = (basename(dirname($_file)) == 'module') ? "<span class='label label-info'>module</span>" : "<span class='label label-default'>folder</span>";
+                    $tag = (basename(dirname($_file)) == 'module') ? "<span class='badge badge-info'>module</span>" : "<span class='label label-default'>folder</span>";
 
                     if ($file!="." && $file!=".." && is_dir($_file))
                     {
@@ -108,10 +108,10 @@ class Index extends AbstractionController
                         $absolute_path = $path . '/'. $file;
                         $_path = str_replace($this->basePath, '', $absolute_path);
 
-                        echo "<tr class='success'><td>$absolute_path $tag</td><td><span class='label label-primary'>$dirs dirs</span></td><td><span class='label label-primary'>$files files</span></td></tr>";
+                        echo "<tr class='table-warning'><td>$absolute_path $tag</td><td><span class='badge badge-primary'>$dirs dirs</span></td><td><span class='badge badge-primary'>$files files</span></td></tr>";
                     }
 
-                    echo "<tr class='warning'>";
+                    echo "<tr class='table-success'>";
 
                     if (is_file($_file))
                     {
@@ -121,7 +121,7 @@ class Index extends AbstractionController
                         $_SESSION["buffer"]["lines"] += $data["lines"];
                         $_SESSION["buffer"]["characters"] += $data["characters"];
 
-                        echo "<td>$_file</td><td><span class='label label-danger'>" . $data["lines"] . " lines</span></td><td><span class='label label-warning'>".$data["characters"]." characters</span></td>";
+                        echo "<td>$_file</td><td><span class='badge badge-danger'>" . $data["lines"] . " lines</span></td><td><span class='badge badge-success'>".$data["characters"]." characters</span></td>";
                     }
 
                     echo "</tr>";
@@ -132,7 +132,7 @@ class Index extends AbstractionController
                 closedir($dh);
             }
             else
-                throw new Exception("No se puedo abrir el directorio $path");
+                throw new Exception("Directory $path not available");
         }
     }
 }

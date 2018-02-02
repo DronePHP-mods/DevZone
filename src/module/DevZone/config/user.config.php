@@ -6,8 +6,8 @@ return [
 		'description' => 'This is a simple release information about project!',
 		'build' => date('Y-m-d'),
 		'changelog' => [
-			"Several bugs has beem fixed!",
-			"Support to DronePHP v1.3.0 has been garanted!"
+			"Several bugs has been fixed!",
+			"Support to DronePHP v1.9.*"
 		]
 	],
 	'routing' => [

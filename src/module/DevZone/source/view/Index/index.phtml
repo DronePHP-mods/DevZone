@@ -5,17 +5,20 @@
     $fd = $routing["friendly"]
 ?>
 
-<div class="$ black-shadow slow jumbotron well enlighten">
-    <h1 class="$ slide-left-in">
+<div class="jumbotron well enlighten">
+    <h1 class="display-4">
         <?= $config["name"] ?>
     </h1>
-    <p class="$ slide-right-in">
+    <p class="lead">
         <?= $config["description"] ?>
+        <br />
     </p>
-    <p class="$ fade-in infinite slow">
-        <img src="<?= $this->basePath() ?>/public/img/plts-logo.png" alt="logo" class="$ fade-out infinite slow" />
-    </p>
-    <a href="<?= $this->basePath() ?>/public/<?= ($fd) ? 'DevZone/Index/development' : '?module=DevZone&controller=Index&view=development' ?>" class="btn btn-default"><span class="glyphicon glyphicon-link"></span> View Release</a>
+    <hr class="my-4" />
+    <a href="<?= $this->basePath() ?>/public/<?= ($fd) ? 'DevZone/Index/development' : '?module=DevZone&controller=Index&view=development' ?>"
+       class="btn btn-info btn-lg"><span class="glyphicon glyphicon-link"></span>
+       View Release
+    </a>
+
 </div>
 
 <div class="$ slide-right-in row clearfix" style="margin-top: 20px">
@@ -26,7 +29,7 @@
     </div>
     <div class="col-md-6 column">
         <p>
-        Copyright <strong>(c)</strong> 2017 Pleets - DronePHP Framework module
+        Copyright <strong>(c)</strong> 2018 Pleets - DronePHP Framework module
         </p>
     </div>
 </div>
